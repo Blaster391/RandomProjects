@@ -1,0 +1,20 @@
+INDEX VERSION 1.127+D:\Robert\Documents\RandomProjects\.metadata\.plugins\org.eclipse.jdt.core
+898258573.index
+3469159328.index
+496699841.index
+229424943.index
+348961056.index
+1830158092.index
+3421505770.index
+4123414508.index
+1529073752.index
+849228543.index
+3144177824.index
+2722529796.index
+731493162.index
+2880764860.index
+299082125.index
+2009830861.index
+2109416362.index
+2722977235.index
+1314412358.index
