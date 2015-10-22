@@ -1,0 +1,165 @@
+/*****************************************************/
+/*** Purpose:                                      ***/
+/***                                               ***/
+/***     Initial Author: Jason Steggles 20/09/15   ***/
+/***     Extended by: Your Name    Date            ***/
+/*****************************************************/
+
+import java.io.*;
+import java.text.*;
+import java.util.*;
+
+public class Sort {
+
+/** Size of array **/
+private int size;
+
+/** Number of used elements in array **/
+private int usedSize;
+
+/** Array of integers **/
+private int[] A;
+
+/** Global variables for counting sort comparisons **/
+public int compIS; /** Global comparison count for Insertion Sort **/
+public int compQS; /** Global comparison count for Quicksort **/
+public int compNewS; /** Global comparison count for new sort **/
+
+/*****************/
+/** Constructor **/
+/*****************/
+Sort(int max)
+{
+    /** Initialiase global sort count variables **/
+    compIS = 0;
+    compQS = 0;
+    compNewS = 0;
+    
+    /** Initialise size variables **/
+    usedSize = 0;
+    size = max;
+    
+    /** Create Array of Integers **/
+    A = new int[size];
+}
+
+/*********************************************/
+/*** Read a file of integers into an array ***/
+/*********************************************/
+public void readIn(String file)
+{
+   try
+   {
+       /** Initialise loop variable **/
+       usedSize = 0;
+       
+       /** Set up file for reading **/
+       FileReader reader = new FileReader(file);
+       Scanner in = new Scanner(reader);
+       
+       /** Loop round reading in data while array not full **/
+       while(in.hasNextInt() && (usedSize < size))
+       {
+           A[usedSize] = in.nextInt();
+           usedSize++;
+       }
+       
+    }
+    catch (IOException e)
+    {
+       System.out.println("Error processing file " + file);
+    }
+}
+
+/**********************/
+/*** Display array  ***/
+/**********************/
+public void display(int line, String header)
+{
+    /*** Integer Formatter - three digits ***/
+    NumberFormat FI = NumberFormat.getInstance();
+    FI.setMinimumIntegerDigits(3);
+
+    /** Print header string **/
+    System.out.print("\n"+header);
+
+    /** Display array data **/
+    for (int i=0;i<usedSize;i++)
+    {
+        /** Check if new line is needed **/
+        if (i%line == 0) 
+        { 
+            System.out.println(); 
+        }
+        
+        /** Display an array element **/
+        System.out.print(FI.format(A[i])+" ");
+    }
+}
+
+/* INSERTION SORT */
+
+public void insertionSort(){
+	for(int i = 1; i < A.length; i++){
+		
+		int key = A[i];
+		int j = i;
+		
+		while((j > 0) && (insertionComparison(key, A[j-1]))){
+			A[j] = A[j-1];
+			j--;
+		}
+		
+		A[j] = key;
+	}
+}
+
+private boolean insertionComparison(int a, int b){ //TODO reword this
+	System.out.println("Comparison");
+	compIS++;
+	return a<b;
+}
+
+/* QUICK SORT */
+
+public int[] quickSort(){
+	return quickSort(0, A.length - 1);
+}
+
+public int[] quickSort(int l, int r){
+	int p;
+	if(r > l){
+		p = partition(l, r);
+		quickSort(l, p-1);
+		quickSort(p+1, r);
+	}
+	return A;
+}
+
+private int partition(int l, int r){
+	int v = A[r];
+	int pL = l;
+	int pR = r;
+	
+	while(pL < pR){
+		while(A[pL] < v){
+			pL++;
+		}
+		while(A[pR] >= v && pR>l){
+			pR--;
+		}
+		if(pL < pR){
+			swap(pL, pR);
+		}
+	}
+	swap(pL, r);
+	return pL;
+}
+
+private void swap(int i, int j){
+	int holder = A[i];
+	A[i] = A[j];
+	A[j] = holder;
+}
+
+} /** End of Sort Class **/

@@ -1,0 +1,13 @@
+Algorithm findMax
+Inputs A: Array of Integers
+Returns max: Integer
+Variables: i: Integer
+
+Begin
+	max := -infinity
+	for i := 0 to size(A)-1 do
+		if max < A[i] then
+			max = A[i]
+		fi
+	od
+End

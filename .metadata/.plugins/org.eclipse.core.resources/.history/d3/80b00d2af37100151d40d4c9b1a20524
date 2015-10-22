@@ -1,0 +1,40 @@
+/************************************************/
+/*** Simple test class for ArrayExample class ***/
+/***                                          ***/
+/***         Jason Steggles 20/09/2015        ***/
+/************************************************/
+
+
+public class Test
+{
+      public static void main(String[] args) 
+      {
+          /** Initialise variables **/
+          int sum = 0;
+          ArrayExample anArray = new ArrayExample(20);
+          
+          /** Read in test data into array **/
+          anArray.readIn("inputs.txt");
+          
+          /** Display array **/
+          anArray.display(10,"Array of Integers");
+          
+          /*
+       
+          sum = anArray.sumArray();
+          System.out.println("\n\nSum of array is " + sum);
+          
+          int even = 0;
+          even = anArray.sumEven();
+          System.out.println("Sum of Even numbers in the array is " + even);
+          
+          int max = 0;
+          max = anArray.findMax();
+          System.out.println("Biggest number " + max);
+          */
+          
+          
+          
+      }
+    
+} /** End of Test class **/

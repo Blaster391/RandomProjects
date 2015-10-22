@@ -1,0 +1,39 @@
+
+/*************************************************/
+/*** Simple test class for Sort class          ***/
+/***                                           ***/
+/*** Author: Jason Steggles    20/09/2015      ***/
+/*************************************************/
+
+
+public class TestSort
+{
+	public static void main(String[] args) 
+    {
+		/*
+        Sort sortTest = new Sort(100);
+        
+        System.out.println("\n\nInsertion sort comparison counter: " + sortTest.compIS);
+        System.out.println("Quicksort comparison counter: " + sortTest.compQS);
+        
+        sortTest.readIn("test3.txt");
+        
+        sortTest.display(10,"Array of Integers");
+        
+        */
+        
+        Sort insertionTest = new Sort(100);
+        insertionTest.readIn("test3.txt");
+        insertionTest.insertionSort();
+        insertionTest.display(10,"SORTED");
+        System.out.println("\n\nInsertion sort comparison counter: " + insertionTest.compIS);
+        
+        
+        Sort quickSortTest = new Sort(100);
+        quickSortTest.readIn("test3.txt");
+        quickSortTest.quickSort();
+        quickSortTest.display(10,"SORTED");
+        System.out.println("Quicksort comparison counter: " + quickSortTest.compQS);
+    }
+    
+} /** End of Test class **/

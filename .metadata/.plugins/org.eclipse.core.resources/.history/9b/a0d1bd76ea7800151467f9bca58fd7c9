@@ -1,0 +1,34 @@
+
+public class LinearEquation {
+	
+	//Assuming equation is ax+b=c, where a, b and c are known. 
+	
+	private float a;
+	private float b;
+	private float c;
+	
+	public LinearEquation(float a, float b, float c){
+		this.a = a;
+		this.b = b;
+		this.c = c;
+	}
+	
+	public boolean correctX(float x){
+		return (a*x+b) == c;
+	}
+	
+	public int bogoEquate(){
+		int x = 0;
+		
+		return x;
+	}
+	
+	public void display(){
+		System.out.println(a+"x"+"+"+b+"="+c);
+	}
+	
+	public static void main(String[] args) {
+		LinearEquation le = new LinearEquation(5,6,8);
+		le.display();
+	}
+}

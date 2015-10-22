@@ -1,0 +1,13 @@
+
+public class BogoEquate {
+	
+	//Assuming equation is ax+b=c, where a, b and c are known. 
+	
+	int a;
+	int b;
+	int c;
+	
+	public static void main(String[] args) {
+		
+	}
+}

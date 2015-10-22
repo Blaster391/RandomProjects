@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;BogoEquate&apos; to &apos;LinearEquation&apos;&#x0D;&#x0A;- Original project: &apos;BogoEquate&apos;&#x0D;&#x0A;- Original element: &apos;BogoEquate&apos;&#x0D;&#x0A;- Renamed element: &apos;LinearEquation&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;BogoEquate&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{BogoEquate.java[BogoEquate" matchStrategy="1" name="LinearEquation" qualified="false" references="true" similarDeclarations="false" stamp="1445538133087" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,57 @@
+import java.util.Random;
+
+public class SimultaneousEquation {
+	//Assuming two equations are in the format ax+by=c, where a, b and c are known. 
+	
+		private float a1;
+		private float b1;
+		private float c1;
+		private float a2;
+		private float b2;
+		private float c2;
+		
+		private static float THRESHOLD = 0.8f;
+		
+		public SimultaneousEquation(float a1, float b1, float c1, float a2, float b2, float c2){
+			this.a1 = a1;
+			this.b1 = b1;
+			this.c1 = c1;
+			
+			this.a2 = a2;
+			this.b2 = b2;
+			this.c2 = c2;
+		}
+		
+		public boolean correctXY(float x, float y){
+			return close((a1*x+b1*y),c1) && close((a2*x+b2*y),c2);
+		}
+		
+		public boolean close(float a, float b){
+			return Math.abs(a-b) < THRESHOLD;
+		}
+		
+		public float bogoEquate(){
+			float x = 0;
+			float y = 0;
+			Random rn = new Random();
+			while(!correctXY(x, y)){
+				x = rn.nextFloat() * rn.nextInt(100);
+				y = rn.nextFloat() * rn.nextInt(100);
+				System.out.println("X: " + x + " Y: " + y);
+			}
+			
+			System.out.println("Solved - X: "+ x + " Y: " + y);
+			return x;
+		}
+		
+		public void display(){
+			System.out.println(a1+"x"+"+"+b1+"y"+"="+c1);
+			System.out.println(a2+"x"+"+"+b2+"y"+"="+c2);
+		}
+		
+		public static void main(String[] args) {
+			SimultaneousEquation se = new SimultaneousEquation(5,6,9, 5, 7, 8);
+			se.display();
+			se.bogoEquate();
+		}
+}

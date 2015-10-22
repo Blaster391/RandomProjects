@@ -1,0 +1,47 @@
+import java.util.Random;
+
+public class LinearEquation {
+	
+	//Assuming equation is ax+b=c, where a, b and c are known. 
+	
+	private float a;
+	private float b;
+	private float c;
+	
+	private static float THRESHOLD = 0.0005f;
+	
+	public LinearEquation(float a, float b, float c){
+		this.a = a;
+		this.b = b;
+		this.c = c;
+	}
+	
+	public boolean correctX(float x){
+		return close((a*x+b),c);
+	}
+	
+	public boolean close(float a, float b){
+		return Math.abs(a-b) < THRESHOLD;
+	}
+	
+	public float bogoEquate(){
+		float x = 0;
+		Random rn = new Random();
+		while(!correctX(x)){
+			x = rn.nextFloat() * rn.nextInt(1000);
+			System.out.println(x);
+		}
+		
+		return x;
+	}
+	
+	public void display(){
+		System.out.println(a+"x"+"+"+b+"="+c);
+	}
+	
+	public static void main(String[] args) {
+		LinearEquation le = new LinearEquation(53,69,807);
+		le.display();
+		System.out.println("EQUATED: " + le.bogoEquate());
+	}
+}

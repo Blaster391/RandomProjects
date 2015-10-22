@@ -1,0 +1,23 @@
+
+public class LinearEquation {
+	
+	//Assuming equation is ax+b=c, where a, b and c are known. 
+	
+	private int a;
+	private int b;
+	private int c;
+	
+	public LinearEquation(int a, int b, int c){
+		this.a = a;
+		this.b = b;
+		this.c = c;
+	}
+	
+	public boolean correctX(int x){
+		return (a*x+b) == c;
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+}
